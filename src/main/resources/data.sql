@@ -1,0 +1,11 @@
+--INSERT INTO patient (patient_name, birth_date, gender, patient_email, created_at, blood_group) VALUES
+--('Anita Singh', '1992-04-15', 'Female', 'anita.singh@example.com', NOW(), 'O_POSITIVE'),
+--('Raj Kumar', '1989-11-30', 'Male', 'raj.kumar@example.com', NOW(), 'A_POSITIVE'),
+--('Sneha Patel', '1990-05-20', 'Female', 'sneha.patel@example.com', NOW(), 'B_NEGATIVE'),
+--('Vikram Gupta', '1985-02-28', 'Male', 'vikram.gupta@example.com', NOW(), 'AB_POSITIVE'),
+--('Sonal Desai', '1993-07-07', 'Female', 'sonal.desai@example.com', NOW(), 'O_NEGATIVE'),
+--('Amit Joshi', '1991-03-18', 'Male', 'amit.joshi@example.com', NOW(), 'A_NEGATIVE'),
+--('Riya Mehta', '1994-10-10', 'Female', 'riya.mehta@example.com', NOW(), 'B_POSITIVE'),
+--('Deepak Verma', '1988-06-06', 'Male', 'deepak.verma@example.com', NOW(), 'AB_NEGATIVE'),
+--('Priya Nair', '1997-09-23', 'Female', 'priya.nair@example.com', NOW(), 'O_POSITIVE'),
+--('Suresh Reddy', '1990-12-12', 'Male', 'suresh.reddy@example.com', NOW(), 'A_POSITIVE');
