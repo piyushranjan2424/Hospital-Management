@@ -2,6 +2,7 @@ package com.spring.data.jpa.entites;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -13,9 +14,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,6 +31,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Builder
 @Entity
 @Table(name = "patient", uniqueConstraints = {
 		@UniqueConstraint(name = "unique_patient_name_birthdate", columnNames = { "patientName",
@@ -46,4 +52,9 @@ public class Patient {
 	private LocalDateTime createdAt;
 	@Enumerated(EnumType.STRING)
 	private BloodGroupType bloodGroup;
+	@OneToOne
+	@JoinColumn(name = "patient_insurance_id")
+	private Insurance insurance;
+	@OneToMany(mappedBy = "patient")
+	private List<Appointment> appointment;
 }

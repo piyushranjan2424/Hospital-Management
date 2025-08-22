@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import com.spring.data.jpa.dto.BloodGroupResponseEntity;
@@ -62,7 +61,8 @@ public class PatientTest {
 		List<BloodGroupResponseEntity> objects = patientRepo.CountEachBloodGroup();
 		objects.forEach(System.out::println);
 		System.out.println("//////////////////////////////////");
-		Page<Patient> patientPage = patientRepo.findAllPatients(PageRequest.of(0, 5, Sort.by("patientName").descending()));
+		Page<Patient> patientPage = patientRepo
+				.findAllPatients(PageRequest.of(0, 5, Sort.by("patientName").descending()));
 		patientPage.forEach(System.out::println);
 		System.out.println("//////////////////////////////////");
 		int rowsUpdated = patientRepo.updatePatientNameWithPatientId("Piyush Ranjan", 1L);
